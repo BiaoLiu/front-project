@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app3">
+        <div v-if="type === 'A'">
+            A
+        </div>
+        <div v-else-if="type === 'B'">
+            B
+        </div>
+        <div v-else-if="type === 'C'">
+            C
+        </div>
+        <div v-else>
+            Not A/B/C
+        </div>
+
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username" key="username-input">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address" key="email-input">
+        </template>
+        <button v-on:click="m1">切换</button>
+
+        <!-- 数组 v-for -->
+        <ol>
+            <li v-for="(item,index) in object">
+                {{index}}-{{item}}
+            </li>
+        </ol>
+
+
+        <!-- 对象 v-for -->
+        <ol>
+            <li v-for="(value,key) in object2">
+                {{key}}-{{value}}
+            </li>
+        </ol>
+    </div>
+</body>
+
+<script>
+    var app3 = new Vue({
+        el: '#app3',
+        data: {
+            type: 'B',
+            loginType: 'username',
+            object: [
+                { name: 'lbi1' },
+                { name: 'lbi2' },
+                { name: 'lbi3' }
+            ],
+            object2: {
+                firstName: 'lbi1',
+                secondeName: 'lbi2'
+            }
+        },
+        methods: {
+            m1: function () {
+                if (this.loginType == 'username') {
+                    this.loginType = 'email'
+                } else {
+                    this.loginType = 'username'
+                }
+            }
+        }
+    })
+</script>
+
+</html>
