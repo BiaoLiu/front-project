@@ -2,6 +2,12 @@
 	"folders": [
 		{
 			"path": "typescript-test"
+		},
+		{
+			"path": "vue-practice"
+		},
+		{
+			"path": "vue-demo"
 		}
 	],
 	"settings": {}
