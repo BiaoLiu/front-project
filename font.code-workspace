@@ -2,6 +2,12 @@
 	"folders": [
 		{
 			"path": "typescript-test"
+		},
+		{
+			"path": "vuetodo"
+		},
+		{
+			"path": "vue-manage-system"
 		}
 	],
 	"settings": {}
