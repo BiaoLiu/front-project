@@ -8,6 +8,12 @@
 		},
 		{
 			"path": "vue-manage-system"
+		},
+		{
+			"path": "vue-demo"
+		},
+		{
+			"path": "vue-practice"
 		}
 	],
 	"settings": {}

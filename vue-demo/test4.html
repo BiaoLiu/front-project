@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app1">
+        {{name}}
+        <button @click="setName">button</button>
+
+        <div v-if="type === A">
+            A
+        </div>
+        <div v-else-if="type === 'B'">
+            B
+        </div>
+        <div v-else>
+            C
+        </div>
+
+        <ol>
+            <li v-for="(city,index) in cities">
+                {{city}}
+            </li>
+        </ol>
+
+        <ul>
+            <li v-for="(value,key) in cityMapping">
+                {{key}}--{{value}}
+            </li>
+        </ul>
+
+        <todo-item v-for="item in titles" v-bind:title="item" v-bind:key="item.id"></todo-item>
+    </div>
+</body>
+
+<script>
+    Vue.component('todo-item', {
+        props: ['title'],
+        template: '<h3>{{title}}</h3>'
+    })
+
+    app = new Vue({
+        el: '#app1',
+        type: 'A',
+        data: {
+            name: 'lbi',
+            address: 'changsha',
+            cities: [
+                'changsha', 'shenzhen', 'ningxiang'
+            ],
+            cityMapping: {
+                changsha: 'hunan',
+                shenzhen: 'guangdong'
+            },
+            titles: [
+                'python',
+                'golang'
+            ]
+        },
+        methods: {
+            setName: function () {
+                this.name += 'lbi'
+            }
+        }
+    })
+</script>
+
+</html>
